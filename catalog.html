@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parts Catalog | Sprinter Parts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-info">
+      <span>Support: +1 (555) 123-4567</span>
+      <span>dantimberlake62@gmail.com</span>
+    </div>
+    <div class="top-bar-shipping">Worldwide Shipping Available</div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <!-- INSERT LOGO HERE -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 2 L12 12 L20.66 17" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M12 12 L3.34 17" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+        <span>SprinterParts</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html" class="active">Catalog</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>Parts Catalog</h1>
+    <p>Browse our comprehensive inventory of Sprinter components.</p>
+  </div>
+
+  <!-- Catalog Section -->
+  <section class="section">
+    <div class="catalog-layout">
+      
+      <!-- Sidebar Filters -->
+      <aside class="catalog-sidebar">
+        <div class="filter-group">
+          <h4>Filter by Category</h4>
+          <ul class="filter-list">
+            <li>
+              <label><input type="checkbox" value="High Roof"> High Roof Parts</label>
+            </li>
+            <li>
+              <label><input type="checkbox" value="Low Roof"> Low Roof Parts</label>
+            </li>
+            <li>
+              <label><input type="checkbox" value="Engine"> Engine Components</label>
+            </li>
+            <li>
+              <label><input type="checkbox" value="Brakes"> Brakes & Suspension</label>
+            </li>
+            <li>
+              <label><input type="checkbox" value="Exterior"> Exterior & Body</label>
+            </li>
+          </ul>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: var(--mercedes-light-silver); text-align: center;">
+          <h4 style="margin-bottom: 10px; font-size: 0.9rem;">Need Help?</h4>
+          <p style="font-size: 0.8rem; margin-bottom: 15px;">Can't find the exact part you're looking for?</p>
+          <a href="contact.html" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.75rem;">Contact Support</a>
+        </div>
+      </aside>
+
+      <!-- Main Catalog Grid -->
+      <main class="catalog-main">
+        <div class="product-grid" id="catalog-grid">
+          <!-- Populated by script.js -->
+          <p>Loading catalog...</p>
+        </div>
+      </main>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="color: white; margin-bottom: 20px;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill: white;">
+            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 2 L12 12 L20.66 17" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M12 12 L3.34 17" stroke="currentColor" stroke-width="2" fill="none"/>
+          </svg>
+          <span>SprinterParts</span>
+        </a>
+        <p style="font-size: 0.9rem; margin-bottom: 20px;">Your trusted source for genuine and aftermarket Mercedes Sprinter spare parts.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/share/1CgjKoMRcX/" target="_blank" title="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="https://t.me/Dantimberlake" target="_blank" title="Telegram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalog.html">Parts Catalog</a></li>
+          <li><a href="order.html">Place an Order</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 SprinterParts. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Place an Order | Sprinter Parts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-info">
+      <span>Support: +1 (555) 123-4567</span>
+      <span>dantimberlake62@gmail.com</span>
+    </div>
+    <div class="top-bar-shipping">Worldwide Shipping Available</div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <!-- INSERT LOGO HERE -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 2 L12 12 L20.66 17" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M12 12 L3.34 17" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+        <span>SprinterParts</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="order.html" class="active">Order</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>Place an Order</h1>
+    <p>Request a quote or place an order for specific parts.</p>
+  </div>
+
+  <!-- Order Section -->
+  <section class="section">
+    <div class="split-layout">
+      
+      <!-- Form Section -->
+      <div class="form-section">
+        <h2 style="margin-bottom: 25px; font-size: 1.5rem;">Order Details</h2>
+        <form id="order-form">
+          <div class="form-group">
+            <label for="full-name">Full Name *</label>
+            <input type="text" id="full-name" class="form-control" placeholder="John Doe" required>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" class="form-control" placeholder="+1 (555) 000-0000" required>
+            </div>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px;">
+            <div class="form-group">
+              <label for="part-name">Part Name / Number *</label>
+              <input type="text" id="part-name" class="form-control" placeholder="e.g. OM642 Oil Filter" required>
+            </div>
+            <div class="form-group">
+              <label for="quantity">Quantity *</label>
+              <input type="number" id="quantity" class="form-control" min="1" value="1" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="address">Delivery Address *</label>
+            <textarea id="address" class="form-control" placeholder="Full shipping address including ZIP/Postal code" required></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="notes">Additional Notes / VIN Number</label>
+            <textarea id="notes" class="form-control" placeholder="Please provide your VIN number if you want us to verify part fitment."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1rem; margin-top: 10px;">Submit Order Request</button>
+          <p style="text-align: center; margin-top: 15px; font-size: 0.8rem; color: var(--text-light);">
+            * Clicking submit will open your email client to send the secure request directly to our sales team.
+          </p>
+        </form>
+      </div>
+
+      <!-- Info Section -->
+      <div class="info-section">
+        <h3 style="margin-bottom: 20px; font-size: 1.4rem;">How to Order</h3>
+        
+        <div style="margin-bottom: 25px;">
+          <h4 style="font-size: 1rem; margin-bottom: 5px; color: var(--mercedes-blue);">1. Submit Request</h4>
+          <p style="font-size: 0.9rem; color: var(--text-light);">Fill out the form with the parts you need. Providing your VIN helps ensure 100% fitment accuracy.</p>
+        </div>
+        
+        <div style="margin-bottom: 25px;">
+          <h4 style="font-size: 1rem; margin-bottom: 5px; color: var(--mercedes-blue);">2. Receive Quote</h4>
+          <p style="font-size: 0.9rem; color: var(--text-light);">Our team will review your request and reply with a formal quote including shipping costs and availability.</p>
+        </div>
+        
+        <div style="margin-bottom: 25px;">
+          <h4 style="font-size: 1rem; margin-bottom: 5px; color: var(--mercedes-blue);">3. Payment & Dispatch</h4>
+          <p style="font-size: 0.9rem; color: var(--text-light);">Once approved, we will send a secure payment link. Parts are typically dispatched within 24 hours of payment.</p>
+        </div>
+
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+          <h4 style="font-size: 1rem; margin-bottom: 10px;">Need Immediate Assistance?</h4>
+          <p style="font-size: 0.9rem; font-weight: 600; margin-bottom: 5px;">Call us: +1 (555) 123-4567</p>
+          <p style="font-size: 0.9rem; font-weight: 600;">Email: dantimberlake62@gmail.com</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="color: white; margin-bottom: 20px;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill: white;">
+            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 2 L12 12 L20.66 17" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M12 12 L3.34 17" stroke="currentColor" stroke-width="2" fill="none"/>
+          </svg>
+          <span>SprinterParts</span>
+        </a>
+        <p style="font-size: 0.9rem; margin-bottom: 20px;">Your trusted source for genuine and aftermarket Mercedes Sprinter spare parts.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/share/1CgjKoMRcX/" target="_blank" title="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="https://t.me/Dantimberlake" target="_blank" title="Telegram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalog.html">Parts Catalog</a></li>
+          <li><a href="order.html">Place an Order</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 SprinterParts. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
