@@ -1,7 +1,7 @@
 // script.js
 
 // --- CONFIGURATION ---
-const TARGET_EMAIL = 'durellnji23@gmail.com';
+const TARGET_EMAIL = 'dantimberlake62@gmail.com';
 
 // --- DYNAMIC CATALOG DATA ---
 const partsData = [
