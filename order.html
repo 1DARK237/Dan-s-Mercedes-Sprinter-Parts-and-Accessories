@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Place an Order | Sprinter Parts</title>
+  <title>Checkout | Sprinter Parts</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
   <div class="top-bar">
     <div class="top-bar-info">
       <span>Support: +1 (555) 123-4567</span>
-      <span>dantimberlake62@gmail.com</span>
+      <span>durellnji23@gmail.com</span>
     </div>
     <div class="top-bar-shipping">Worldwide Shipping Available</div>
   </div>
@@ -21,7 +21,6 @@
   <header>
     <div class="nav-container">
       <a href="index.html" class="logo">
-        <!-- INSERT LOGO HERE -->
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
           <path d="M12 2 L12 12 L20.66 17" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -29,22 +28,32 @@
         </svg>
         <span>SprinterParts</span>
       </a>
-      <button class="menu-toggle" id="menu-toggle">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-      </button>
+      
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="catalog.html">Catalog</a></li>
-        <li><a href="order.html" class="active">Order</a></li>
+        <li><a href="order.html" class="active">Checkout</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+
+      <div class="header-actions">
+        <!-- Cart Toggle Button -->
+        <button class="cart-toggle" id="cart-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+        </button>
+        
+        <button class="menu-toggle" id="menu-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- Page Header -->
   <div class="page-header">
-    <h1>Place an Order</h1>
-    <p>Request a quote or place an order for specific parts.</p>
+    <h1 class="display-font">Checkout</h1>
+    <p>Review your cart and submit your order request.</p>
   </div>
 
   <!-- Order Section -->
@@ -52,8 +61,12 @@
     <div class="split-layout">
       
       <!-- Form Section -->
-      <div class="form-section">
+      <div class="form-section fade-in">
         <h2 style="margin-bottom: 25px; font-size: 1.5rem;">Order Details</h2>
+        
+        <!-- Order Summary injected by JS -->
+        <div id="checkout-summary"></div>
+
         <form id="order-form">
           <div class="form-group">
             <label for="full-name">Full Name *</label>
@@ -71,17 +84,6 @@
             </div>
           </div>
           
-          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px;">
-            <div class="form-group">
-              <label for="part-name">Part Name / Number *</label>
-              <input type="text" id="part-name" class="form-control" placeholder="e.g. OM642 Oil Filter" required>
-            </div>
-            <div class="form-group">
-              <label for="quantity">Quantity *</label>
-              <input type="number" id="quantity" class="form-control" min="1" value="1" required>
-            </div>
-          </div>
-          
           <div class="form-group">
             <label for="address">Delivery Address *</label>
             <textarea id="address" class="form-control" placeholder="Full shipping address including ZIP/Postal code" required></textarea>
@@ -92,7 +94,7 @@
             <textarea id="notes" class="form-control" placeholder="Please provide your VIN number if you want us to verify part fitment."></textarea>
           </div>
           
-          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1rem; margin-top: 10px;">Submit Order Request</button>
+          <button type="submit" id="submit-order-btn" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1rem; margin-top: 10px;">Submit Order Request</button>
           <p style="text-align: center; margin-top: 15px; font-size: 0.8rem; color: var(--text-light);">
             * Clicking submit will open your email client to send the secure request directly to our sales team.
           </p>
@@ -100,28 +102,28 @@
       </div>
 
       <!-- Info Section -->
-      <div class="info-section">
-        <h3 style="margin-bottom: 20px; font-size: 1.4rem;">How to Order</h3>
+      <div class="info-section fade-in">
+        <h3 style="margin-bottom: 20px; font-size: 1.4rem; color: var(--white);">How to Order</h3>
         
         <div style="margin-bottom: 25px;">
-          <h4 style="font-size: 1rem; margin-bottom: 5px; color: var(--mercedes-blue);">1. Submit Request</h4>
-          <p style="font-size: 0.9rem; color: var(--text-light);">Fill out the form with the parts you need. Providing your VIN helps ensure 100% fitment accuracy.</p>
+          <h4 style="font-size: 1rem; margin-bottom: 5px; color: var(--merc-accent);">1. Submit Request</h4>
+          <p style="font-size: 0.9rem; color: var(--text-light);">Review your cart and fill out the form. Providing your VIN helps ensure 100% fitment accuracy.</p>
         </div>
         
         <div style="margin-bottom: 25px;">
-          <h4 style="font-size: 1rem; margin-bottom: 5px; color: var(--mercedes-blue);">2. Receive Quote</h4>
+          <h4 style="font-size: 1rem; margin-bottom: 5px; color: var(--merc-accent);">2. Receive Quote</h4>
           <p style="font-size: 0.9rem; color: var(--text-light);">Our team will review your request and reply with a formal quote including shipping costs and availability.</p>
         </div>
         
         <div style="margin-bottom: 25px;">
-          <h4 style="font-size: 1rem; margin-bottom: 5px; color: var(--mercedes-blue);">3. Payment & Dispatch</h4>
+          <h4 style="font-size: 1rem; margin-bottom: 5px; color: var(--merc-accent);">3. Payment & Dispatch</h4>
           <p style="font-size: 0.9rem; color: var(--text-light);">Once approved, we will send a secure payment link. Parts are typically dispatched within 24 hours of payment.</p>
         </div>
 
         <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-color);">
-          <h4 style="font-size: 1rem; margin-bottom: 10px;">Need Immediate Assistance?</h4>
-          <p style="font-size: 0.9rem; font-weight: 600; margin-bottom: 5px;">Call us: +1 (555) 123-4567</p>
-          <p style="font-size: 0.9rem; font-weight: 600;">Email: dantimberlake62@gmail.com</p>
+          <h4 style="font-size: 1rem; margin-bottom: 10px; color: var(--white);">Need Immediate Assistance?</h4>
+          <p style="font-size: 0.9rem; font-weight: 600; margin-bottom: 5px; color: var(--merc-silver);">Call us: +1 (555) 123-4567</p>
+          <p style="font-size: 0.9rem; font-weight: 600; color: var(--merc-silver);">Email: durellnji23@gmail.com</p>
         </div>
       </div>
 
@@ -132,8 +134,8 @@
   <footer>
     <div class="footer-grid">
       <div class="footer-col">
-        <a href="index.html" class="logo" style="color: white; margin-bottom: 20px;">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill: white;">
+        <a href="index.html" class="logo" style="margin-bottom: 20px;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
             <path d="M12 2 L12 12 L20.66 17" stroke="currentColor" stroke-width="2" fill="none"/>
             <path d="M12 12 L3.34 17" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -156,7 +158,7 @@
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="catalog.html">Parts Catalog</a></li>
-          <li><a href="order.html">Place an Order</a></li>
+          <li><a href="order.html">Checkout</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </div>
